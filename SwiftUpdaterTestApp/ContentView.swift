@@ -4,8 +4,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
-                .imageScale(.large)
+                .accessibilityHidden(true)
                 .foregroundStyle(.tint)
+                .imageScale(.large)
 
             Text("Hello, world!")
         }
