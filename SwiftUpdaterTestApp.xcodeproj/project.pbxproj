@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		71F39B6B2E58EF3300C678FE /* SwiftUpdaterTestAppPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 71F39B6A2E58EF3300C678FE /* SwiftUpdaterTestAppPackage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		71E4B8E02E58C5D500C424DC /* SwiftUpdaterTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUpdaterTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71F39B682E58EEEB00C678FE /* SwiftUpdaterTestAppPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftUpdaterTestAppPackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F39B6B2E58EF3300C678FE /* SwiftUpdaterTestAppPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +38,7 @@
 		71E4B8D72E58C5D500C424DC = {
 			isa = PBXGroup;
 			children = (
+				71F39B682E58EEEB00C678FE /* SwiftUpdaterTestAppPackage */,
 				71E4B8E22E58C5D500C424DC /* SwiftUpdaterTestApp */,
 				71E4B8E12E58C5D500C424DC /* Products */,
 			);
@@ -66,6 +73,7 @@
 			);
 			name = SwiftUpdaterTestApp;
 			packageProductDependencies = (
+				71F39B6A2E58EF3300C678FE /* SwiftUpdaterTestAppPackage */,
 			);
 			productName = SwiftUpdaterTestApp;
 			productReference = 71E4B8E02E58C5D500C424DC /* SwiftUpdaterTestApp.app */;
@@ -272,7 +280,7 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
-				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
 				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
@@ -289,7 +297,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jochenbernard.swiftupdatertestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -309,7 +317,7 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
-				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
 				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
@@ -326,7 +334,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jochenbernard.swiftupdatertestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -375,6 +383,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 71D212472E58C7B20041906A /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		71F39B6A2E58EF3300C678FE /* SwiftUpdaterTestAppPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftUpdaterTestAppPackage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

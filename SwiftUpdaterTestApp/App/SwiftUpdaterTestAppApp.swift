@@ -6,5 +6,6 @@ struct SwiftUpdaterTestAppApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowResizability(.contentSize)
     }
 }
