@@ -53,7 +53,6 @@ struct ContentView: View {
             Text("Install")
                 .frame(maxWidth: .infinity)
         }
-        .disabled(true)
     }
 
     private var versionString: String {
@@ -74,7 +73,9 @@ struct ContentView: View {
         }
     }
 
-    private func install() {}
+    private func install() {
+        viewModel.installRelease()
+    }
 }
 
 #Preview {

@@ -16,4 +16,12 @@ class ContentViewModel {
     func fetchLatestRelease() async throws {
         latestRelease = try await updater?.getLatestRelease()
     }
+
+    func installRelease() {
+        guard let latestRelease else {
+            return
+        }
+
+        updater?.installRelease(latestRelease)
+    }
 }
