@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftUpdaterGitHubReleasesUI
 
 // swiftlint:disable force_cast
 // swiftlint:disable force_unwrapping
@@ -17,7 +18,9 @@ struct ContentView: View {
             VStack(spacing: 8.0) {
                 fetchButton
 
-                if let release = viewModel.latestRelease {
+                if let update = viewModel.update {
+                    SUGitHubUpdateView(update)
+                } else if let release = viewModel.latestRelease {
                     VStack(spacing: 8.0) {
                         ReleaseView(release)
 

@@ -12,6 +12,7 @@ class ContentViewModel {
     )
 
     private(set) var latestRelease: SUGitHubRelease?
+    private(set) var update: SUGitHubUpdate?
 
     func fetchLatestRelease() async throws {
         latestRelease = try await updater?.getLatestRelease()
@@ -22,6 +23,7 @@ class ContentViewModel {
             return
         }
 
-        updater?.installRelease(latestRelease)
+        update = updater?.update(to: latestRelease)
+        update?.resume()
     }
 }
