@@ -51,9 +51,9 @@ struct ReleaseView: View {
         )
 
         value(
-            label: "URL",
-            value: Link(destination: release.url) {
-                Text(release.url.absoluteString)
+            label: "Download URL",
+            value: Link(destination: release.downloadURL) {
+                Text(release.downloadURL.absoluteString)
                     .multilineTextAlignment(.leading)
             }
         )
@@ -87,7 +87,7 @@ struct ReleaseView: View {
             ),
             isPrerelease: false,
             // swiftlint:disable:next force_unwrapping
-            url: URL(string: "/")!
+            downloadURL: URL(string: "/")!
         )
     )
 }

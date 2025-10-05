@@ -13,6 +13,10 @@ let package = Package(
     ],
     dependencies: [
         .package(
+            url: "https://github.com/jochenbernard/swift-updater",
+            branch: "main"
+        ),
+        .package(
             url: "https://github.com/jochenbernard/swift-updater-github-releases",
             branch: "main"
         )
@@ -22,11 +26,11 @@ let package = Package(
             name: "SwiftUpdaterTestAppPackage",
             dependencies: [
                 .product(
-                    name: "SwiftUpdaterGitHubReleases",
-                    package: "swift-updater-github-releases"
+                    name: "SwiftUpdaterUI",
+                    package: "swift-updater"
                 ),
                 .product(
-                    name: "SwiftUpdaterGitHubReleasesUI",
+                    name: "SwiftUpdaterGitHubReleases",
                     package: "swift-updater-github-releases"
                 )
             ]

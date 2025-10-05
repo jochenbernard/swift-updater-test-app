@@ -1,8 +1,6 @@
 import SwiftUI
-import SwiftUpdaterGitHubReleasesUI
-
-// swiftlint:disable force_cast
-// swiftlint:disable force_unwrapping
+import SwiftUpdater
+import SwiftUpdaterUI
 
 struct ContentView: View {
     @State private var viewModel = ContentViewModel()
@@ -12,14 +10,14 @@ struct ContentView: View {
             ContentUnavailableView(
                 "Swift Updater Test App",
                 systemImage: "arrow.down.app",
-                description: Text(versionString)
+                description: Text(Bundle.main.version?.string ?? "")
             )
 
             VStack(spacing: 8.0) {
                 fetchButton
 
                 if let update = viewModel.update {
-                    SUGitHubUpdateView(update)
+                    SUUpdateView(update)
                 } else if let release = viewModel.latestRelease {
                     VStack(spacing: 8.0) {
                         ReleaseView(release)
@@ -58,18 +56,6 @@ struct ContentView: View {
         }
     }
 
-    private var versionString: String {
-        "\(shortVersion) (\(version))"
-    }
-
-    private var version: String {
-        Bundle.main.infoDictionary!["CFBundleVersion"] as! String
-    }
-
-    private var shortVersion: String {
-        Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-    }
-
     private func fetch() {
         Task {
             try? await viewModel.fetchLatestRelease()
@@ -77,7 +63,7 @@ struct ContentView: View {
     }
 
     private func install() {
-        viewModel.installRelease()
+        try? viewModel.installRelease()
     }
 }
 

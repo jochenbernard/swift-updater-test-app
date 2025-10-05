@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUpdater
 import SwiftUpdaterGitHubReleases
 
 @Observable
@@ -6,24 +7,24 @@ import SwiftUpdaterGitHubReleases
 class ContentViewModel {
     private let updater = SUGitHubReleasesUpdater(
         owner: "jochenbernard",
-        repo: "swift-updater-test-app",
-        assetName: "SwiftUpdaterTestApp.zip",
-        urlSession: .shared
+        repository: "swift-updater-test-app",
+        assetMatcher: .fileExtension("zip"),
+        extractor: .zip(fileMatcher: .fileExtension("app"))
     )
 
     private(set) var latestRelease: SUGitHubRelease?
-    private(set) var update: SUGitHubUpdate?
+    private(set) var update: SUUpdate?
 
     func fetchLatestRelease() async throws {
-        latestRelease = try await updater?.getLatestRelease()
+        latestRelease = try await updater?.fetchLatestRelease()
     }
 
-    func installRelease() {
+    func installRelease() throws {
         guard let latestRelease else {
             return
         }
 
         update = updater?.update(to: latestRelease)
-        update?.resume()
+        try update?.start()
     }
 }
